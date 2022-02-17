@@ -1,0 +1,77 @@
+Highcharts.chart('container', {
+  chart: {
+    type: 'area'
+  },
+  title: {
+    text: 'Electricity generation by source, Germany 1990-2020'
+  },
+  subtitle: {
+    text: 'Source: IEA.org'
+  },
+  xAxis: {
+    categories: ['1990', '1995', '2000', '2005', '2010', '2015', '2020'],
+    tickmarkPlacement: 'on',
+    title: {
+      enabled: false
+    }
+  },
+  yAxis: {
+    title: {
+      text: 'GWh'
+    },
+    labels: {
+      formatter: function () {
+        return this.value / 1000;
+      }
+    }
+  },
+  tooltip: {
+    split: false,
+    valueSuffix: ' GWh'
+  },
+  plotOptions: {
+    area: {
+      stacking: 'normal',
+      lineColor: '#666666',
+      lineWidth: 1,
+      marker: {
+        lineWidth: 1,
+        lineColor: '#666666'
+      }
+    }
+  },
+  series: [{
+    name: 'Coal',
+    data: [321641, 296365, 304162, 297753, 273457, 283710, 148164]
+  }, {
+    name: 'Oil',
+    data: [10397, 8983, 4785, 11998, 8741, 6209, 4907]
+  }, {
+    name: 'Natural gas',
+    data: [40460, 43180, 52495, 73960, 90352, 63017, 99564]
+  }, {
+    name: 'Biofuels',
+    data: [376, 1085, 2487, 11456, 29176, 44558, 44751]
+  }, {
+    name: 'Waste',
+    data: [4810, 6611, 7634, 6504, 11099, 12824, 12394]
+  }, {
+    name: 'Nuclear',
+    data: [152468, 153091, 169606, 163055, 140556, 91786, 64382]
+  }, {
+    name: 'Hydro',
+    data: [19791, 26250, 25962, 26417, 27353, 24898, 24877]
+  }, {
+    name: 'Solar PV',
+    data: [1, 7, 60, 1282, 11729, 38726, 50600]
+  }, {
+    name: 'Wind',
+    data: [71, 1712, 9352, 27774, 38547, 80624, 130965]
+  }, {
+    name: 'Other sources',
+    data: [0, 0, 0, 2915, 2082, 1824, 1174]
+  }, {
+    name: 'Geothermal',
+    data: [0, 0, 0, 0, 28, 133, 217]
+  }]
+});
